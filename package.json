@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/RobJLeonard/SoftwareEnginnering#readme",
   "dependencies": {
-    "tsunit.external": "^2.1.1"
+    "ts-unit": "^1.0.1"
   }
 }
