@@ -1,0 +1,22 @@
+{
+  "name": "softwareengineering",
+  "version": "1.0.0",
+  "description": "Contains dev tasks for cs3012",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobJLeonard/SoftwareEnginnering.git"
+  },
+  "author": "leonarr1",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RobJLeonard/SoftwareEnginnering/issues"
+  },
+  "homepage": "https://github.com/RobJLeonard/SoftwareEnginnering#readme",
+  "dependencies": {
+    "tsunit.external": "^2.1.1"
+  }
+}
