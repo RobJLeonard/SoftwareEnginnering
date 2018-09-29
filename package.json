@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/RobJLeonard/SoftwareEnginnering#readme",
   "dependencies": {
-    "ts-unit": "^1.0.1"
+    "ts-unit": "^1.0.1",
+    "unittest": "^1.0.0"
   }
 }
