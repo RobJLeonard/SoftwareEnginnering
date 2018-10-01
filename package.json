@@ -4,7 +4,7 @@
   "description": "Contains dev tasks for cs3012",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -r ts-node/register typescript\\src\\**\\*.spec.ts"
+    "test": "mocha -r ts-node/register typescript/test/*.spec.ts"
   },
   "repository": {
     "type": "git",
