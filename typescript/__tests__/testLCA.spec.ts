@@ -1,6 +1,6 @@
 import BSTree from '../src/BST';
 import { expect } from 'chai';
-import 'mocha';
+import 'jest';
 
 describe('Create Binary Tree', () => {
 
@@ -56,16 +56,45 @@ describe('Create Binary Tree', () => {
       expect(tree.size()).to.equal(5);
     })
 
-    it('should add several nodes to the tree in random order', () => {
+    it('should add several nodes to the tree unorder', () => {
       let tree = new BSTree();
 
-      for (let index = 0; index < 10; index++) {
-        tree.add(Math.floor((100*Math.random())));
-      }
+      let array = [8,3,10,1,6,4,7,14,13,9];
+
+      array.forEach(element => {
+        tree.add(element)
+      });
 
       expect(tree.size()).to.equal(10);
     })
 
+  });
+
+  describe('findPath() tests', () => {
+
+    it('should return true for elements with a path from the root', () =>{
+      let tree = new BSTree();
+      let array = [8,3,10,1,6,4,,7,14,13,9,0];
+
+      array.forEach(element => {
+        tree.add(element)
+      });
+
+      let path = [];
+      expect(tree.findPath(tree.root,path,9)).to.be.true;
+    })
+
+    it('should return false for elements without a path from the root', () =>{
+      let tree = new BSTree();
+      let array = [8,3,10,1,6,4,7,14,13,9,0];
+
+      array.forEach(element => {
+        tree.add(element)
+      });
+
+      let path = [];
+      expect(tree.findPath(tree.root,path,18)).to.be.false;
+    })
   });
 
   describe('Lowest Common Ancestor Tests', () => {
@@ -91,6 +120,6 @@ describe('Create Binary Tree', () => {
       tree.add(9);
       tree.add(0);
 
-      expect(tree.findLCA(9,13)).to.equal(10);
+      expect(tree.findLCA(0,4)).to.equal(3);
     })
   })

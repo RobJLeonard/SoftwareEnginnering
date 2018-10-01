@@ -19,7 +19,7 @@ interface BSTreeNode<T> {
  */
 export default class BSTree<K, V extends K> {
 
-    private root: BSTreeNode<V> | null;
+    public root: BSTreeNode<V> | null;
     private compare: util.ICompareFunction<K>;
     private nElements: number;
     /**
@@ -161,7 +161,7 @@ export default class BSTree<K, V extends K> {
         // store the node in the path vector 
         // the node will be removed if it's 
         // not in the path to the element
-        path.concat(root.element);
+        path.push(root.element);
 
         // check if the element is the same as the root key
         if(root.element === element)
@@ -186,6 +186,23 @@ export default class BSTree<K, V extends K> {
     findLCA(element1: K, element2: K): BSTreeNode<K> | undefined {
         if(this.isEmpty())
             return undefined;
+
+        // Lists to store paths from the root
+        let path1 = [];
+        let path2 = [];
+
+        // Find paths to both elements
+        if(!this.findPath(this.root, path1, element1)
+            || !this.findPath(this.root, path2, element2))
+            return undefined;
+
+        let index = 0;
+        while(index < path1.length && index < path2.length){
+            if(path1[index] !== path2[index])
+                break;
+            index++;
+        }
+        return path1[index-1];
     }
 
     /**
