@@ -14,7 +14,7 @@ describe('Create Binary Tree', () => {
         let tree = new BSTree();
 
         expect(tree.isEmpty()).to.be.true;
-    })
+    });
 });
 
 describe('Adding Nodes to the tree', () => {
@@ -24,7 +24,7 @@ describe('Adding Nodes to the tree', () => {
 
         tree.add(1);
         expect(tree.size()).to.equal(1);
-    })
+    });
 
     it('should check if the tree isEmpty', () => {
         let tree = new BSTree();
@@ -32,7 +32,7 @@ describe('Adding Nodes to the tree', () => {
         tree.add(1);
 
         expect(tree.isEmpty()).to.be.false;
-    })
+    });
 
     it('should add several nodes to the tree in order', () => {
         let tree = new BSTree();
@@ -43,7 +43,7 @@ describe('Adding Nodes to the tree', () => {
         tree.add(5);
 
         expect(tree.size()).to.equal(5);
-    })
+    });
 
     it('should add several nodes to the tree in reverse order', () => {
         let tree = new BSTree();
@@ -54,7 +54,7 @@ describe('Adding Nodes to the tree', () => {
         tree.add(1);
 
         expect(tree.size()).to.equal(5);
-    })
+    });
 
     it('should add several nodes to the tree unordered', () => {
         let tree = new BSTree();
@@ -78,9 +78,9 @@ describe('Adding Nodes to the tree', () => {
         let tree = new BSTree();
 
         tree.add(5);
-        
+
         expect(tree.add(5)).to.be.false;
-    })
+    });
 
 });
 
@@ -133,7 +133,7 @@ describe('Searching for Nodes', () => {
 
         expect(tree.contains(undefined)).to.be.false;
     });
-})
+});
 
 describe('Removing elements from the tree', () => {
 
@@ -215,4 +215,4 @@ describe('Removing elements from the tree', () => {
         tree.remove(10);
         expect(tree.search(10)).to.be.undefined;
     });
-})
+});
