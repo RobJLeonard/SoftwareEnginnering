@@ -58,7 +58,7 @@ describe('Create Binary Tree', () => {
 
     it('should add several nodes to the tree in random order', () => {
       let tree = new BSTree();
-      
+
       for (let index = 0; index < 10; index++) {
         tree.add(Math.floor((100*Math.random())));
       }
@@ -67,3 +67,30 @@ describe('Create Binary Tree', () => {
     })
 
   });
+
+  describe('Lowest Common Ancestor Tests', () => {
+
+    it('should test findLCA for an empty tree', () =>{
+      let tree = new BSTree();
+      
+      expect(tree.findLCA(3,5)).to.be.undefined;
+    })
+
+    it('should test findLCA for a tree of 10 nodes', () =>{
+      let tree = new BSTree();
+      
+      tree.add(8);
+      tree.add(3);
+      tree.add(10);
+      tree.add(1);
+      tree.add(6);
+      tree.add(4);
+      tree.add(7);
+      tree.add(14);
+      tree.add(13);
+      tree.add(9);
+      tree.add(0);
+
+      expect(tree.findLCA(9,13)).to.be.undefined;
+    })
+  })
