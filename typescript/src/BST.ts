@@ -17,7 +17,7 @@ interface BSTreeNode<T> {
  *
  * @see BSTree
  */
-export default class BSTreeKV<K, V extends K> {
+export default class BSTree<K, V extends K> {
 
     private root: BSTreeNode<V> | null;
     private compare: util.ICompareFunction<K>;

@@ -4,7 +4,7 @@
   "description": "Contains dev tasks for cs3012",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "mocha -r ts-node/register typescript\\src\\**\\*.spec.ts"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,14 @@
   },
   "homepage": "https://github.com/RobJLeonard/SoftwareEnginnering#readme",
   "dependencies": {
-    "ts-unit": "^1.0.1",
+    "typescript": "^3.1.1",
     "unittest": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.6",
+    "@types/mocha": "^5.2.5",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "ts-node": "^7.0.1"
   }
 }
