@@ -14,4 +14,10 @@ module.exports = {
       "json",
       "node"
     ],
+    "collectCoverage": true,
+    "collectCoverageFrom": ["typescript/**/*.{js,jsx,ts,tsx}"],
+    "coverageReporters": [
+      "json",
+      "html"
+    ]
   }
