@@ -145,6 +145,50 @@ export default class BSTree<K, V extends K> {
     }
 
     /**
+     * Finds the path from root node to given root of the tree.
+     * Stores the path in a list path[].
+     * @param {BSTreeNode} root The root node of the tree.
+     * @param {Object[]} path A list of the nodes along the path.
+     * @param {Object} element The element to check for a path to.
+     * @returns {boolean} true is a path exits to the node specified.
+     */
+    findPath(root: BSTreeNode<K>, path: Object[], element: K): boolean {
+        
+        // Base Case
+        if(root == null)
+            return false;
+
+        // store the node in the path vector 
+        // the node will be removed if it's 
+        // not in the path to the element
+        path.concat(root.element);
+
+        // check if the element is the same as the root key
+        if(root.element === element)
+            return true;
+
+        if(root.leftCh != null && this.findPath(root.leftCh, path, element)
+        || root.rightCh != null && this.findPath(root.rightCh, path, element))
+            return true;
+
+        // if no path to the element exists then remove root 
+        // from path and return false
+        path.pop();
+        return false;
+    }
+
+    /**
+     * Finds the lowest common ancestor of two nodes in the tree.
+     * @param {Object} element The first node you want the common ancestor of.
+     * @param {Object} element The second node you want the common ancestor of.
+     * @return {BSTreeNode} The lowest common ancestor or undefined if none exists.
+     */
+    findLCA(element1: K, element2: K): BSTreeNode<K> | undefined {
+        if(this.isEmpty())
+            return undefined;
+    }
+
+    /**
      * Executes the provided function once for each element present in this tree in
      * in-order.
      * @param {function(Object):*} callback function to execute, it is invoked with one

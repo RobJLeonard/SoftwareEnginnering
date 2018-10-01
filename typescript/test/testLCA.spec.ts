@@ -91,6 +91,6 @@ describe('Create Binary Tree', () => {
       tree.add(9);
       tree.add(0);
 
-      expect(tree.findLCA(9,13)).to.be.undefined;
+      expect(tree.findLCA(9,13)).to.equal(10);
     })
   })
