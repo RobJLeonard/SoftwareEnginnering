@@ -1,5 +1,5 @@
 import unittest
-import BST
+import BinaryTree
 
 class TestLowestCommonAncestor (unittest.TestCase):
 
