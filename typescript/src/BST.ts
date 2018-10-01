@@ -206,40 +206,6 @@ export default class BSTree<K, V extends K> {
     }
 
     /**
-     * Executes the provided function once for each element present in this tree in
-     * in-order.
-     * @param {function(Object):*} callback function to execute, it is invoked with one
-     * argument: the element value, to break the iteration you can optionally return false.
-     */
-    inorderTraversal(callback: util.ILoopFunction<V>): void {
-        this.inorderTraversalAux(this.root, callback, {
-            stop: false
-        });
-    }
-
-    /**
-     * Executes the provided function once for each element present in this tree in pre-order.
-     * @param {function(Object):*} callback function to execute, it is invoked with one
-     * argument: the element value, to break the iteration you can optionally return false.
-     */
-    preorderTraversal(callback: util.ILoopFunction<V>): void {
-        this.preorderTraversalAux(this.root, callback, {
-            stop: false
-        });
-    }
-
-    /**
-     * Executes the provided function once for each element present in this tree in post-order.
-     * @param {function(Object):*} callback function to execute, it is invoked with one
-     * argument: the element value, to break the iteration you can optionally return false.
-     */
-    postorderTraversal(callback: util.ILoopFunction<V>): void {
-        this.postorderTraversalAux(this.root, callback, {
-            stop: false
-        });
-    }
-
-    /**
      * Returns the minimum element of this tree.
      * @return {*} the minimum element of this tree or undefined if this tree is
      * is empty.
@@ -261,30 +227,6 @@ export default class BSTree<K, V extends K> {
             return undefined;
         }
         return this.maximumAux(this.root).element;
-    }
-
-    /**
-     * Executes the provided function once for each element present in this tree in inorder.
-     * Equivalent to inorderTraversal.
-     * @param {function(Object):*} callback function to execute, it is
-     * invoked with one argument: the element value, to break the iteration you can
-     * optionally return false.
-     */
-    forEach(callback: util.ILoopFunction<V>): void {
-        this.inorderTraversal(callback);
-    }
-
-    /**
-     * Returns an array containing all of the elements in this tree in in-order.
-     * @return {Array} an array containing all of the elements in this tree in in-order.
-     */
-    toArray(): V[] {
-        const array: Array<V> = [];
-        this.inorderTraversal(function(element: V): boolean {
-            array.push(element);
-            return true;
-        });
-        return array;
     }
 
     /**
@@ -346,59 +288,6 @@ export default class BSTree<K, V extends K> {
             y.leftCh = node.leftCh;
             y.leftCh.parent = y;
         }
-    }
-
-    /**
-     * @private
-     */
-    private inorderTraversalAux(node: BSTreeNode<V> | null, callback: util.ILoopFunction<V>, signal: { stop: boolean; }): void {
-        if (node === null || signal.stop) {
-            return;
-        }
-        this.inorderTraversalAux(node.leftCh, callback, signal);
-        if (signal.stop) {
-            return;
-        }
-        signal.stop = callback(node.element) === false;
-        if (signal.stop) {
-            return;
-        }
-        this.inorderTraversalAux(node.rightCh, callback, signal);
-    }
-
-    /**
-     * @private
-     */
-    private preorderTraversalAux(node: BSTreeNode<V> | null, callback: util.ILoopFunction<V>, signal: { stop: boolean; }) {
-        if (node === null || signal.stop) {
-            return;
-        }
-        signal.stop = callback(node.element) === false;
-        if (signal.stop) {
-            return;
-        }
-        this.preorderTraversalAux(node.leftCh, callback, signal);
-        if (signal.stop) {
-            return;
-        }
-        this.preorderTraversalAux(node.rightCh, callback, signal);
-    }
-    /**
-     * @private
-     */
-    private postorderTraversalAux(node: BSTreeNode<V> | null, callback: util.ILoopFunction<V>, signal: { stop: boolean; }) {
-        if (node === null || signal.stop) {
-            return;
-        }
-        this.postorderTraversalAux(node.leftCh, callback, signal);
-        if (signal.stop) {
-            return;
-        }
-        this.postorderTraversalAux(node.rightCh, callback, signal);
-        if (signal.stop) {
-            return;
-        }
-        signal.stop = callback(node.element) === false;
     }
 
     /**
