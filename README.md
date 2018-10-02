@@ -1,3 +1,3 @@
 # SoftwareEnginnering
 
-This repo contains all the dev tasks required for CS3012
+This repo contains lowest common ancestor 1 assignment for CS3012
