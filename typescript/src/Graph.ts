@@ -90,4 +90,13 @@ export class Graph {
 		this._edges = [];
 	}
 
+	/**
+	 * Finds the Lowest Common ancestor of two vertices in the graph
+	 */
+	public lca(v0: Vertex, v1: Vertex) {
+		const uplinks0 = v0.uplinks;
+		const uplinks1 = v1.uplinks;
+		
+	}
+
 }
