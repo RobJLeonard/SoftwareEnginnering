@@ -1,22 +1,60 @@
 import { Graph } from '../src/Graph';
+import { Vertex } from '../src/Vertex';
 import { expect } from 'chai';
 import 'jest';
 
 
-describe('Create DAG Graph', () => {
 
-    it('Should create a graph node', () => {
-        let graph = new Graph();
+/**
+ * Creates a Graph with the following topology:
+ */
+const setup = (): Graph => {
+	return new Graph();
+};
 
-        let v1 = graph.addVertex();
+/**
+ * Creates a Graph with the following topology:
+ * 
+ * 	  0---+-----------+
+ * 		  |           |
+ *        1           |
+ *                    |
+ *            2       |
+ *            |       |
+ *            +---3   |
+ *                    |
+ *                    4 
+ */
+const setupAndConnect = (): Graph => {
+	const g = new Graph();
+	const v0 = g.addVertex();
+	const v1 = g.addVertex(v0);
+	const v2 = g.addVertex();
+	const v3 = g.addVertex(v2);
+	const v4 = g.addVertex(v0);
+	return g;
+}
 
-        let v2 = graph.addVertex();
+describe('Testing the Graph constructor', () => {
 
-        
-        graph.addEdge(v1, v2);
+    it('Should create a new graph', () => {
+        const graph = new Graph();
 
-        console.log(graph.vertices[0].toString());
+        expect(graph.vertices).to.be.empty;
+        expect(graph.edges).to.be.empty;
+    });
+});
 
-        expect(graph.vertices).to.be.not.null;
+describe('Testing the Graph prototype addVertex function', () => {
+
+    it('Should create a new vertex on the graph, \
+        Assign it the next availabe id\
+        - insert it at the end of the chain\
+        Add it to the array of vertices\
+        - optionally create an edge between the new vertex and each given vertex', () => {
+        const graph = new Graph();
+        const v0 = graph.addVertex();
+        expect(v0.id).to.equal(0, "v0 gets default id of 0")
+        expect(graph.vertices).to.deep.equal([v0]);
     });
 });
