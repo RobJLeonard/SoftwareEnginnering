@@ -15,6 +15,8 @@ describe('Create DAG Graph', () => {
         
         graph.addEdge(v1, v2);
 
+        console.log(graph.vertices[0].toString());
+
         expect(graph.vertices).to.be.not.null;
     });
 });

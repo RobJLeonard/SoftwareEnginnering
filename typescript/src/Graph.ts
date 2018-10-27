@@ -35,7 +35,7 @@ export class Graph {
 	 */
 	addVertex(...uplinks: Vertex[]): Vertex {
 		const v = new Vertex(this._vertices.length);
-		this._vertices.length && this._vertices[0]._previous.insertAfter(v);
+		this._vertices.length && this._vertices[0].last.insertAfter(v);
 		this._vertices.push(v);
 		for (let l of uplinks) {
 			this._edges.push(l.connectTo(v, this._edges.length));
@@ -70,7 +70,7 @@ export class Graph {
 	 * Traverses forward from the given vertex, executing the callback at each vertex.
 	 */
 	private _traverse(v: Vertex, i: number, cb: TraversalCallback): void {
-		!cb(v, i) && v._next && this._traverse(v._next, i+1, cb);
+		!cb(v, i) && v.next && this._traverse(v.next, i+1, cb);
 	}
 
 	/**
