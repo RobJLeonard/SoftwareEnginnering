@@ -221,3 +221,19 @@ describe('Testing the Vertex prototype first and last functions', ()=> {
     });
 
 });
+
+describe('Testing the Vertex isBefore and isAfter functions', ()=> {
+
+    it('should return true if the vertx isBefore the give vertex.', () => {
+        const v = setup();
+        v[0].insertAfter(v[1]);
+        expect(v[0].isBefore(v[1])).to.be.true;
+    });
+
+    it('should return true if the vertx isAfter the give vertex.', () => {
+        const v = setup();
+        v[0].insertBefore(v[1]);
+        expect(v[0].isAfter(v[1])).to.be.true;
+    });
+
+});

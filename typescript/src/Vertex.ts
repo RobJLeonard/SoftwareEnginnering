@@ -144,33 +144,6 @@ export class Vertex {
 	}
 
 	/**
-	 * Returns an array of vertices which connect directly to this vertex.
-	 */
-	directlyAbove(): Vertex[] {
-		return this._uplinks.map(e => e.top);
-	}
-
-	/**
-	 * Returns an array of vertices which connect directly or indirectly to this vertex.
-	 */
-	above(): Vertex[] {
-		return this.directlyAbove().reduce((prev, cur) => {
-			return [ ...prev, cur, ...cur.directlyAbove() ];
-		}, []);
-	}
-
-	/**
-	 * Returns true if the given vertex is a direct or indirect uplink of this vertex.
-	 */
-	isAbove(vertex: Vertex): boolean {
-		if (vertex === this) {
-			return false;
-		}
-		const cb = (e, i, arr) => e === vertex;
-		return this.above().some(cb, this);
-	}
-
-	/**
 	 * Returns an array of vertices to which this vertex direectly connects.
 	 */
 	directlyBelow(): Vertex[] {
@@ -216,22 +189,6 @@ export class Vertex {
 		this._downlinks.push(e);
 		vertex._uplinks.push(e);
 		return e;
-	}
-
-	/**
-	 * If necessary, moves this vertex immediately before its highest priority downlink and returns
-	 * it.  Triggers this method for every uplink of this vertex.
-	 */
-	reflow() {
-		for (let e of this._downlinks) {
-			if (e.bottom.isBefore(this)) {
-				e.bottom.insertBefore(this);
-			}
-		}
-		for (let v of this.above()) {
-			v.reflow();
-		}
-		return this;
 	}
 
 	/**

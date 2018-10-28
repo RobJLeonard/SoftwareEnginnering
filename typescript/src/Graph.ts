@@ -50,36 +50,11 @@ export class Graph {
 		const proto: ProtoEdge = { top: top, bottom: bottom };
 		const cb = e => e.top === proto.top && e.bottom === proto.bottom;
 		if (!top.availableConnections().some(cb)) {
-			throw new Error("Unable to create edge.  Circular connection detected!");
+			throw new Error('Unable to create edge.  Circular connection detected!');
 		}
 		const e = top.connectTo(bottom, this._edges.length);
 		this._edges.push(e);
 		return e;
-	}
-
-	/**
-	 * Returns an array of every available edge.
-	 */
-	availableEdges(): ProtoEdge[] {
-		return this._vertices.reduce((prev: ProtoEdge[], cur: Vertex) => {			
-			return [ ...prev, ...cur.availableConnections() ];
-		}, []);
-	}
-
-	/**
-	 * Traverses forward from the given vertex, executing the callback at each vertex.
-	 */
-	private _traverse(v: Vertex, i: number, cb: TraversalCallback): void {
-		!cb(v, i) && v.next && this._traverse(v.next, i+1, cb);
-	}
-
-	/**
-	 * Traverses the graph in order, calling callback at each vertex.
-	 */
-	public traverse(cb: TraversalCallback) {
-		if (this._vertices.length > 0) {
-			this._traverse(this._vertices[0].first, 0, cb);
-		}
 	}
 
 	/**
@@ -91,12 +66,27 @@ export class Graph {
 	}
 
 	/**
+	 * Finds the Common ancestors of two vertices in the graph
+	 */
+	public commonAncestors(v0: Vertex, v1: Vertex): Vertex[] {
+		const v0Ancestors = v0.before;
+		const v1Ancestors = v1.before;
+		const commonAncestors: Vertex[] = [];
+		v0Ancestors.forEach(ancestorVertex0 => {
+			v1Ancestors.forEach(ancestorVertex1 => {
+				if(ancestorVertex0 === ancestorVertex1)
+				commonAncestors.push(ancestorVertex0);
+			});
+		});
+		return commonAncestors;
+	}
+
+	/**
 	 * Finds the Lowest Common ancestor of two vertices in the graph
 	 */
-	public lca(v0: Vertex, v1: Vertex) {
-		const uplinks0 = v0.uplinks;
-		const uplinks1 = v1.uplinks;
-		
+	public lowestCommonAncestor(v0: Vertex, v1: Vertex): Vertex {
+		const ancestors: Vertex[] = this.commonAncestors(v0, v1)
+		return ancestors[0];
 	}
 
 }
