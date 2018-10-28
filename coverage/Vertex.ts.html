@@ -1,0 +1,725 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for Vertex.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="prettify.css" />
+    <link rel="stylesheet" href="base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="index.html">All files</a> Vertex.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">93.55% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>87/93</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">83.87% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>26/31</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">86.21% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>25/29</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">96.39% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>80/83</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">128x</span>
+<span class="cline-any cline-yes">128x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">128x</span>
+<span class="cline-any cline-yes">128x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">167x</span>
+<span class="cline-any cline-yes">167x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130x</span>
+<span class="cline-any cline-yes">128x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">31x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">59x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">75x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">115x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span></td><td class="text"><pre class="prettyprint lang-js">import { Edge, ProtoEdge } from "./edge";
+&nbsp;
+/**
+ * Represents a vertex within a directed-acyclic-graph.
+ */
+export class Vertex {
+&nbsp;
+	private _id: number;
+&nbsp;
+	private _next: Vertex = null;
+	private _previous: Vertex = null;
+&nbsp;
+	private _uplinks: Edge[] = [];
+	private _downlinks: Edge[] = [];
+&nbsp;
+	/**
+	 * Joins the given vertices such that the second is the first's next.  This method does not
+	 * repair the structure of the chain.
+	 */
+	static join(v1: Vertex, v2: Vertex): void {
+		v1 &amp;&amp; (v1._next = v2);
+		v2 &amp;&amp; (v2._previous = v1);
+	}
+&nbsp;
+	/**
+	 * Unjoins the given vertex such that it has no next or previous.  This method does not repair
+	 * the structure of the chain.
+	 */
+	static unjoin(vertex: Vertex): void {
+		vertex._next = null;
+		vertex._previous = null;
+	}
+&nbsp;
+	/**
+	 * Instantiates a new instance of Vertex.
+	 */
+	constructor(id: number = 0) {
+		this._id = id;
+	}
+&nbsp;
+	/** Gets or sets the content of this vertex. */
+	public content: any;
+&nbsp;
+	/** Gets the unique id of this Vertex. */
+	get id(): number {
+		return this._id;
+	}
+&nbsp;
+	/** Gets the collection of uplinks. */
+<span class="fstat-no" title="function not covered" >	get uplinks(): Edge[] { <span class="cstat-no" title="statement not covered" ></span>return this._uplinks; </span>}
+&nbsp;
+	/** Gets the collection of downlinks. */
+<span class="fstat-no" title="function not covered" >	get downlinks(): Edge[] { <span class="cstat-no" title="statement not covered" ></span>return this._downlinks; </span>}
+&nbsp;
+	/** Gets the first vertex in the chain. */
+	get first(): Vertex { 
+		return this._previous ? this._previous.first : this; 
+	}
+&nbsp;
+	/** Gets an array of vertices which are before this vertex in the chain. */
+	get before(): Vertex[] {
+		if (this._previous) {
+			return [ this._previous, ...this._previous.before ];
+		}
+		else {
+			return [];
+		}
+	}
+&nbsp;
+	/** Gets the previous vertex in the chain. */
+	get previous(): Vertex { 
+		return this._previous; 
+	}
+&nbsp;
+	/** Gets the next vertex in the chain. */
+	get next(): Vertex {
+		return this._next; 
+	}
+&nbsp;
+	/**
+	 * Gets an array of vertices which are after this vertex in the chain.
+	 */
+	get after(): Vertex[] {
+		if (this._next) {
+			return [ this._next, ...this._next.after ];
+		}
+		else {
+			return [];
+		}
+	}
+&nbsp;
+	/** Gets the last vertex in the chain. */
+	get last(): Vertex {
+		return this._next ? this._next.last : this;
+	}
+&nbsp;
+	/**
+	 * Removes this vertex from the chain and returns it.
+	 */
+	remove(): Vertex {
+		Vertex.join(this._previous, this._next);
+		Vertex.unjoin(this);
+		return this;
+	}
+&nbsp;
+	/**
+	 * Inserts the given vertex directly before this vertex.
+	 * @param {Vertex} vertex The vertex to insert.
+	 */
+	insertBefore(vertex: Vertex): Vertex {
+		const previous = this._previous;
+		Vertex.join(vertex.previous, vertex.next);
+		Vertex.join(previous, vertex);
+		Vertex.join(vertex, this);
+		return vertex;
+	}
+&nbsp;
+	/**
+	 * Inserts the given vertex directly after this one.
+	 * @param {Vertex} vertex The vertex to insert.
+	 */
+	insertAfter(vertex: Vertex): Vertex {
+		const next = this._next;
+		Vertex.join(vertex.previous, vertex.next);
+		Vertex.join(this, vertex);
+		Vertex.join(vertex, next);
+		return vertex;
+	}
+&nbsp;
+	/**
+	 * Returns true if this vertex is before the given vertex.
+	 * @param {Vertex} vertex The vertex to check.
+	 */
+	isBefore(vertex: Vertex): boolean {
+		return this._next &amp;&amp; (this._next === vertex || <span class="branch-2 cbranch-no" title="branch not covered" >this._next.isBefore(vertex))</span>;
+	}
+&nbsp;
+	/**
+	 * Returns true if this vertex is after the given vertex.
+	 * @param {Vertex} vertex The vertex to check.
+	 */
+	isAfter(vertex: Vertex): boolean {
+		return this._previous &amp;&amp; (this._previous === vertex || <span class="branch-2 cbranch-no" title="branch not covered" >this._previous.isAfter(vertex))</span>; 
+	}
+&nbsp;
+	/**
+	 * Returns an array of vertices to which this vertex direectly connects.
+	 */
+	directlyBelow(): Vertex[] {
+		return this._downlinks.map(e =&gt; e.bottom);
+	}
+&nbsp;
+	/**
+	 * Returns an array of vertices to which this vertex connects directly or indirectly.
+	 */
+	below(): Vertex[] {
+		return this.directlyBelow().reduce((prev, cur) =&gt; {
+			return [ ...prev, cur, ...cur.directlyBelow() ];
+		}, []);
+	}
+&nbsp;
+	/**
+	 * Returns true if the given vertex is a direct or indirect downlink of this vertex.
+	 */
+	isBelow(vertex: Vertex): boolean {
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (vertex === this) {
+<span class="cstat-no" title="statement not covered" >			return false;</span>
+		}
+		const cb = (e, i, arr) =&gt; e === vertex;
+		return this.below().some(cb, this);
+	}
+&nbsp;
+	/**
+	 * Connects this vertex to the given vertex, returning a new instance of edge which defines the
+	 * relationship between the two vertices.
+	 */
+	connectTo(vertex: Vertex, <span class="missing-if-branch" title="if path not taken" >I</span>id: number = 0): Edge {
+		for (let e of this._downlinks) {
+			<span class="missing-if-branch" title="if path not taken" >I</span>if (e.bottom === vertex) {
+<span class="cstat-no" title="statement not covered" >				throw new Error("The vertices are already connected.");</span>
+			}
+		}
+		const e: Edge = {
+			id: id,
+			top: this,
+			bottom: vertex,
+			content: null
+		};
+		this._downlinks.push(e);
+		vertex._uplinks.push(e);
+		return e;
+	}
+&nbsp;
+	/**
+	 * Returns an array of possible edges that could be created without creating a cyclical
+	 * connection.
+	 */
+	availableConnections(): ProtoEdge[] {
+		const protos: ProtoEdge[] = [];
+		const isConnected = (v: Vertex) =&gt; this._downlinks.some(<span class="fstat-no" title="function not covered" >e =&gt; <span class="cstat-no" title="statement not covered" >e.bottom === v)</span>;</span>
+		let pointer = this.first;
+		while (pointer) {
+			if (pointer !== this &amp;&amp; !pointer.isBelow(this) &amp;&amp; !isConnected(pointer)) {
+				protos.push({
+					top: this,
+					bottom: pointer
+				});
+			}
+			pointer = pointer.next;
+		}
+		return protos;
+	}
+&nbsp;
+	/**
+	 * Produces a string representation of this vertex.
+	 */
+<span class="fstat-no" title="function not covered" >	toString(): String {</span>
+<span class="cstat-no" title="statement not covered" >		return `Vertex [$this.id]`;</span>
+	}
+	
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Oct 28 2018 15:06:28 GMT+0000 (GMT Standard Time)
+</div>
+</div>
+<script src="prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="sorter.js"></script>
+</body>
+</html>
